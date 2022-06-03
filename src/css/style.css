@@ -1,0 +1,233 @@
+body {
+    font-family: 'Poppins';
+    font-style: normal;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 1171px;
+    height: 828px;
+
+}
+
+/* CABEÇALHO */
+header {
+    /*overflow: scroll;*/
+}
+.filtersContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    width: 1171px;
+}
+
+.estiloGeralBotoes{
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.estiloGeralBotoes--mostrarTodos {
+    background: #12B886;
+    color: #FFFFFF;
+    border: 1.5px solid #12B886;
+    border-radius: 8px;
+}
+
+.estiloGeralBotoes--filtrar {
+    background-color: #12B886 5%;
+    color: #12B886;
+}
+
+.containerBuscaPorNome {
+    display: flex;
+    justify-content: space-between;
+}
+
+.campoBuscaPorNome {
+    background-color: #F1F3F5;
+    border-style: none;
+    padding-left: 10px;
+    width: 324px;
+    height: 52px;
+    margin-right: 9px;
+    border-radius: 8px ;
+}
+
+.estiloGeralBotoes--botaoBuscaPorNome {
+    color: #FFFFFF;
+    background: #12B886;
+    border: 1.5px solid #12B886;
+    border-radius: 8px;
+}
+
+/* CONTEÚDO */
+#main{
+    display: flex;
+    
+}
+
+.containerListaProdutos ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 274px;
+    width: 274;
+}
+
+.containerListaProdutos ul li {
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    transition: ease-in-out .1s;
+    /*height: 274px;*/
+}
+
+.containerListaProdutos ul li:hover {
+    box-shadow: 3px 3px 13px 1px rgb(146 146 146);
+}
+
+.containerListaProdutos ul li img {
+    width: 274px;
+    height: 175px;
+    border-radius: 8px;
+}
+
+.containerListaProdutos ul li h3 {
+    color: #212529;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.containerListaProdutos ul li p {
+    color: #212529;
+    font-family: 'Poppins';
+    font-style: normal;
+    padding-bottom: 5px;
+    font-weight: 500px;
+    font-size: 12px;
+}
+.containerListaProdutos ul li span {
+    display: flex;
+    color: #868E96;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 32px;
+}
+
+/* PREÇO TOTAL */
+.containerPrecoTotal{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    width: 1171px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    
+}
+.containerPrecoTotal p{
+    color: #212529;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+.containerPrecoTotal span{
+    font-family: 'Poppins';
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px; 
+    width: 82px;
+    height: 34px;      
+    background: #212529;
+    color: #FFFFFF;
+    border-radius: 4px;
+    
+}
+
+/*carrinho compras*/
+
+.containerCarrinho {
+    width: 290px;
+    height: 319px;
+    margin: 5px 0px 0px 5px;
+}
+
+.buttonAdd {
+    width: 79px;
+    height: 29px;
+    color: #12B886;
+    background: rgba(18, 184, 134, 0.05);
+    border: 1.5px solid rgba(18, 184, 134, 0.05);
+    border-radius: 8px;
+}
+
+.buttonAdd:hover {
+    transform: scale(1.02);
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    padding-left: 52px;
+    width: 290px;
+    height: 50.75px;
+    background-color: #12B886;
+    border-radius: 12px 12px 0 0;
+    color: #F1F3F5;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 319px;
+    background-color: #FFFFFF;
+    overflow: auto;
+}
+
+.box > p {
+    display: flex;
+    text-align: center;
+    margin-top: 100px;
+    color: #868E96;
+}
+
+.boxCarrinho {
+    display: flex;    
+    margin: 25px 0px 50px;
+    max-width: 290px;
+    max-height: 520px;
+}
+
+.cardCarrinho{
+    width: 290px;
+    height: 80px;
+}
+
+.imgCarrinho {
+    width: 70px;
+    height: 70px;
+}

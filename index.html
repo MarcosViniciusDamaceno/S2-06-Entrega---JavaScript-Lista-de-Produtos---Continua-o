@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+        <div id="filters" class="filtersContainer">
+            
+            <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">Todos os Produtos</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--filtrarHortifruti estiloGeralBotoes--filtrar">Hortifruti</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--filtrarPanificadora estiloGeralBotoes--filtrar">Panificadora</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--filtrarLaticínios estiloGeralBotoes--filtrar">Laticínios</button>
+            
+            <div class="containerBuscaPorNome">
+                
+                <input type="text" placeholder="Nome do produto" class="campoBuscaPorNome">
+                <input type="submit" id="enviar" value="Buscar" class=" estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome ">
+
+            </div>
+        </div>
+       <!--<div class="containerPrecoTotal">
+            <p>Valor total dos produtos da sessão selecionada</p>
+            <span id="precoTotal" ></span>
+        </div>
+    -->
+    </header>
+    
+    <main id="main">
+        <div class="containerListaProdutos" id="listProdutos">
+            <ul id="listaProdutos">
+           
+            </ul>
+        </div>
+    </main>
+
+    <script src="src/js/dataProdutos.js"></script>
+    <script src="src/js/script.js"></script>
+</body>
+</html>
