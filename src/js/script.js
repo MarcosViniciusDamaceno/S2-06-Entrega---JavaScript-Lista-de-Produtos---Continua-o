@@ -119,14 +119,16 @@ function botaoComprar() {
 }botaoComprar()
 
 function atualizarCarrinho (){
+    
     const box = document.querySelector(".containerCarrinho")
 
     const boxSomaItens = document.createElement("div")
-    boxSomaItens.classList.add("boxSomaItens")
+        boxSomaItens.classList.add("boxSomaItens")
+        boxSomaItens.innerHTML=""  
 
-    const somaCarrinho = document.createElement("p")
-    somaCarrinho.classList.add("somaCarrinho")
-    somaCarrinho.innerText = `Total R$ ${somaTotal}`
+    const somaCarrinho = document.createElement("p")    
+        somaCarrinho.classList.add("somaCarrinho")
+        somaCarrinho.innerText = `Total R$ ${somaTotal}`
     
 
     const quantidadeCarrinho = document.createElement("p")
@@ -134,8 +136,7 @@ function atualizarCarrinho (){
         quantidadeCarrinho.innerText = `Quantidade ${quantidadeTotal}`
         
     box.appendChild(boxSomaItens)
-    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)    
-
+    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)  
 }
 
 function filtrarProdutosSecao (listaProdutos, secao) {
@@ -178,7 +179,7 @@ function buscarPorNome() {
 
         const value = name.value.trim().toLowerCase()
 
-        if(value == `'f' || value == 'p'` || value == 'l'){
+        if(value == 'f' || value == 'p' || value == 'l'){
             const ul = document.getElementById("listaProdutos")
             ul.innerHTML = ""
 
