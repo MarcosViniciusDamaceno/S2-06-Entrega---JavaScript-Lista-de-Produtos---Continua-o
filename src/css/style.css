@@ -69,13 +69,14 @@ header {
     display: flex;
     
 }
-
+.containerListaProdutos {
+    width: 1080px;
+}
 .containerListaProdutos ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     height: 274px;
-    width: 274;
 }
 
 .containerListaProdutos ul li {
@@ -230,4 +231,10 @@ header {
 .imgCarrinho {
     width: 70px;
     height: 70px;
+}
+
+.boxSomaItens {
+    background-color: #868E96;
+    width: 290px;
+    height: 50px;
 }

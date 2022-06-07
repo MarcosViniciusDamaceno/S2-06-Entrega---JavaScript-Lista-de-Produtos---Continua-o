@@ -41,6 +41,7 @@ function carrinho(){
         
         const containerCarrinho = document.createElement("div")
             containerCarrinho.classList.add("containerCarrinho")
+
         
         const header = document.createElement("div")
             header.classList.add("header")
@@ -59,7 +60,10 @@ function carrinho(){
 
         return containerCarrinho
 }
+
 carrinho()
+var somaTotal = 0
+var quantidadeTotal = 0
 
 function botaoComprar() {
 
@@ -68,12 +72,14 @@ function botaoComprar() {
     const box = document.querySelector(".box")
 
     const boxCarrinho = document.createElement("boxCarrinho")
-    
+
+
     for(let i = 0; i<produtos.length; i++){
-        
 
         buttonAdd[i].addEventListener("click", () => {
-            box.innerHTML=""
+
+        box.innerHTML=""
+
 
         const boxCarrinho2 = document.createElement("div")
         boxCarrinho2.classList.add("boxCarrinho")
@@ -97,71 +103,49 @@ function botaoComprar() {
         const precoProduto = document.createElement("p")
         precoProduto.innerText = produtos[i].preco
         precoProduto.classList.add("precoProduto")
+
+        somaTotal += parseInt(produtos[i].preco)
+        quantidadeTotal++
     
         box.appendChild(boxCarrinho)
         boxCarrinho.appendChild(boxCarrinho2)
         boxCarrinho2.appendChild(cardProdutoCarrinho)
         cardProdutoCarrinho.append(imagem,nomeProduto,secaoProduto,precoProduto)
-
         
+        
+        atualizarCarrinho ()
         } )
-
     }
 }botaoComprar()
 
-/*
-function soma (array){
-    let somaTotal = 0
-    array.forEach(array => {
-        let preco = array.preco
-        somaTotal += parseInt(preco)
-    const precoTotal = document.getElementById("precoTotal")
-    precoTotal.innerHTML= `R$ ${somaTotal},00`
-    });
+function atualizarCarrinho (){
+    const box = document.querySelector(".containerCarrinho")
+
+    const boxSomaItens = document.createElement("div")
+    boxSomaItens.classList.add("boxSomaItens")
+
+    const somaCarrinho = document.createElement("p")
+    somaCarrinho.classList.add("somaCarrinho")
+    somaCarrinho.innerText = `Total R$ ${somaTotal}`
+    
+
+    const quantidadeCarrinho = document.createElement("p")
+        quantidadeCarrinho.classList.add("somaCarrinho")
+        quantidadeCarrinho.innerText = `Quantidade ${quantidadeTotal}`
+        
+    box.appendChild(boxSomaItens)
+    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)
+
+    
+
 }
-soma(produtos)
-*/
-/*
-function contarItensCarrinho (){
-
-    //box2.innerHTML = ""
-     
-    const quantidadeItens = document.createElement("p")
-      quantidadeItens.classList = "quantidadeItens" 
-
-    const quantidadeTotal = document.createElement("p")
-      quantidadeTotal.classList = "quantidadeTotal"
-      quantidadeTotal.innerHTML = "Quantidade:"
-
-      box2.appendChild(quantidadeTotal)
-      box2.appendChild(quantidadeItens)              
-      quantidadeItens.innerHTML = quantidade
-    
-    const valorItens = document.createElement("p")
-      valorItens.classList = "valorItens"
-    const valorTotal = document.createElement("p")
-      valorTotal.classList = "valorTotal"
-      valorTotal.innerHTML = "Total:"
-      box2.appendChild(valorTotal)
-      box2.appendChild(valorItens)
-      valorItens.innerHTML = `R$ ${soma},00`
-  
-  }
-*/
-function somaItensCarrinho(){
-    let soma = 0
-    let quantidade = 0
-
-    const box = document.querySelector(".box")
-    
-}somaItensCarrinho()
 
 function filtrarProdutosSecao (listaProdutos, secao) {
 
     let produtosFiltradosSecao = listaProdutos.filter((produtos) => {
         return produtos.secao.toLowerCase().indexOf(secao.toLowerCase()) !== -1        
     })
-    //soma(produtosFiltradosSecao)
+
     return produtosFiltradosSecao
     
 }
@@ -171,7 +155,7 @@ function filtrarProdutosCategoria (listaProdutos, categoria) {
     let produtosFiltradosCategoria = listaProdutos.filter((produtos) => {
         return produtos.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1        
     })
-    //soma(produtosFiltradosCategoria)
+
     return produtosFiltradosCategoria
     
 }
@@ -181,7 +165,7 @@ function filtrarProdutosNome (listaProdutos, nome) {
     let produtosFiltradosNome = listaProdutos.filter((produtos) => {
         return produtos.nome.toLowerCase().indexOf(nome.toLowerCase()) !== -1        
     })
-    //soma(produtosFiltradosNome)
+
     return produtosFiltradosNome
     
 }
@@ -226,7 +210,7 @@ function clickFiltrarHortiFruti (produtos){
             let hortiFruti = filtrarProdutosSecao (produtos, 'hortifruti')
             const ul = document.getElementById("listaProdutos")
             ul.innerHTML = ""
-            //soma(hortiFruti)
+
             return cardProdutos(hortiFruti)
             
         })
@@ -240,7 +224,7 @@ function clickFiltrarPanificadora (produtos){
             let Panificadora = filtrarProdutosSecao (produtos, 'Panificadora')
             const ul = document.getElementById("listaProdutos")
             ul.innerHTML = ""
-            //soma(Panificadora)
+
             return cardProdutos(Panificadora)
             
         })
@@ -254,7 +238,7 @@ function clickFiltrarLaticinio (produtos){
             let Laticinio = filtrarProdutosSecao (produtos, 'Laticínio')
             const ul = document.getElementById("listaProdutos")
             ul.innerHTML = ""
-            //soma(Laticinio)
+
             return cardProdutos(Laticinio)
             
         })
@@ -267,7 +251,7 @@ function mostrarTodos(produtos) {
         buttonMostrarTodos.addEventListener("click", function(){
             const ul = document.getElementById("listaProdutos")
             ul.innerHTML = ""
-            //soma(produtos)
+
             return cardProdutos(produtos)
         })
 }
