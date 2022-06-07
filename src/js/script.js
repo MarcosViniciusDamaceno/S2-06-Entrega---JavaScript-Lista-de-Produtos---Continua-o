@@ -57,7 +57,7 @@ function carrinho(){
 
         containerCarrinho.append(header,box)
         main.appendChild(containerCarrinho)
-
+        
         return containerCarrinho
 }
 
@@ -112,8 +112,8 @@ function botaoComprar() {
         boxCarrinho2.appendChild(cardProdutoCarrinho)
         cardProdutoCarrinho.append(imagem,nomeProduto,secaoProduto,precoProduto)
         
-        
         atualizarCarrinho ()
+        
         } )
     }
 }botaoComprar()
@@ -134,9 +134,7 @@ function atualizarCarrinho (){
         quantidadeCarrinho.innerText = `Quantidade ${quantidadeTotal}`
         
     box.appendChild(boxSomaItens)
-    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)
-
-    
+    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)    
 
 }
 
