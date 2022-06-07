@@ -16,7 +16,11 @@ function cardProdutos (array) {
             span.innerText = array[i].secao
         
         const p = document.createElement("p")
-            p.innerText = `R$ ${array[i].preco}`
+            if(array[i].promocao == true){
+                p.innerText = `R$ ${array[i].precoPromocao}`
+            }else{
+                p.innerText = `R$ ${array[i].preco}`
+            }
         
         const button = document.createElement("button")
             button.classList.add("buttonAdd")
@@ -57,8 +61,9 @@ function carrinho(){
 
         containerCarrinho.append(header,box)
         main.appendChild(containerCarrinho)
-        
+        botaoComprar()
         return containerCarrinho
+        
 }
 
 carrinho()
@@ -73,9 +78,11 @@ function botaoComprar() {
 
     const boxCarrinho = document.createElement("boxCarrinho")
 
+    
+
 
     for(let i = 0; i<produtos.length; i++){
-
+        const box1 = document.querySelector(".containerCarrinho")
         buttonAdd[i].addEventListener("click", () => {
 
         box.innerHTML=""
@@ -103,28 +110,35 @@ function botaoComprar() {
         const precoProduto = document.createElement("p")
         precoProduto.innerText = produtos[i].preco
         precoProduto.classList.add("precoProduto")
-
-        somaTotal += parseInt(produtos[i].preco)
+        
+        if(produtos[i].promocao == true){
+            somaTotal +=  parseFloat(produtos[i].precoPromocao)
+        }else{
+            somaTotal +=  parseFloat(produtos[i].preco)
+        }
         quantidadeTotal++
     
         box.appendChild(boxCarrinho)
         boxCarrinho.appendChild(boxCarrinho2)
         boxCarrinho2.appendChild(cardProdutoCarrinho)
-        cardProdutoCarrinho.append(imagem,nomeProduto,secaoProduto,precoProduto)
+        cardProdutoCarrinho.append(imagem,nomeProduto,secaoProduto,precoProduto)  
         
         atualizarCarrinho ()
-        
         } )
     }
-}botaoComprar()
+}
 
 function atualizarCarrinho (){
     
     const box = document.querySelector(".containerCarrinho")
 
+    const boxSomaItens1 = document.createElement("div")
+        boxSomaItens1.classList.add("boxSomaItens1")
+
     const boxSomaItens = document.createElement("div")
         boxSomaItens.classList.add("boxSomaItens")
-        boxSomaItens.innerHTML=""  
+
+        boxSomaItens.innerHTML=""
 
     const somaCarrinho = document.createElement("p")    
         somaCarrinho.classList.add("somaCarrinho")
@@ -135,8 +149,10 @@ function atualizarCarrinho (){
         quantidadeCarrinho.classList.add("somaCarrinho")
         quantidadeCarrinho.innerText = `Quantidade ${quantidadeTotal}`
         
-    box.appendChild(boxSomaItens)
-    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)  
+    box.appendChild(boxSomaItens1)
+    boxSomaItens1.appendChild(boxSomaItens)
+    boxSomaItens.append(quantidadeCarrinho, somaCarrinho)
+    
 }
 
 function filtrarProdutosSecao (listaProdutos, secao) {

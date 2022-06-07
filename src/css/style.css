@@ -171,7 +171,7 @@ header {
 
 .containerCarrinho {
     width: 290px;
-    height: 319px;
+    height: 500px;
     margin: 5px 0px 0px 5px;
 }
 
@@ -204,7 +204,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 290px;
-    height: 319px;
+    height: 500px;
     background-color: #FFFFFF;
     overflow: auto;
 }
